@@ -19,6 +19,9 @@ inherit gnomebase gobject-introspection gtk-doc gettext features_check
 def gnome_verdir(v):
     return oe.utils.trim_version(v, 1)
 
+
+SRC_URI += "file://libwnck3-fix-incompatible-pointer-type-error.patch"
+
 SRC_URI[archive.sha256sum] = "905bcdb85847d6b8f8861e56b30cd6dc61eae67ecef4cd994a9f925a26a2c1fe"
 
 # gtk+3 and libepoxy need to be built with x11 PACKAGECONFIG.
