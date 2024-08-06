@@ -37,3 +37,5 @@ FILES:${PN} += " \
 PROVIDES += "android-tools-conf"
 RPROVIDES:${PN} = "android-tools-conf"
 BBCLASSEXTEND = "native"
+
+SKIP_RECIPE[android-tools-conf-configfs] ?= "Use higher version from dynamic-layers/selinux/recipes-devtools"

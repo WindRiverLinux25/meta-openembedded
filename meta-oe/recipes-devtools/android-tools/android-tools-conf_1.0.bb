@@ -21,3 +21,5 @@ python () {
     if profprov and pn != profprov:
         raise bb.parse.SkipRecipe("PREFERRED_PROVIDER_%s set to %s, not %s" % (pn, profprov, pn))
 }
+
+SKIP_RECIPE[android-tools-conf] ?= "Use higher version from dynamic-layers/selinux/recipes-devtools"
