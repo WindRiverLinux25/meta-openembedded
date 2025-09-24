@@ -10,13 +10,15 @@ HOMEPAGE = "http://pgpool.net"
 LICENSE = "BSD-2-Clause"
 LIC_FILES_CHKSUM = "file://COPYING;md5=e4b38de086d73e0521de0bbdbaa4a1a9"
 
-SRC_URI = "http://www.pgpool.net/mediawiki/images/pgpool-II-${PV}.tar.gz \
+SRC_URI = "https://www.pgpool.net/mediawiki/images/pgpool-II-${PV}.tar.gz \
 	   file://0001-Fix-build-error-when-build-this-file.patch \
+           file://0001-snprintf-Add-math.h-to-ensure-isnan-and-isinf-are-de.patch \
+           file://0001-fix-compiling-on-32-bit-systems.patch \
 	   file://define_SIGNAL_ARGS.patch \
 	   file://pgpool.sysconfig \
 	   file://pgpool.service \
            "
-SRC_URI[sha256sum] = "8e14b0558a15dae8767c8e1acee3f2f6c7c08ebfffda66a359367eaaa56c3936"
+SRC_URI[sha256sum] = "d1392e74ce2807f8ae628872cb1ab7914249921180dc99df40a1d602647a10fd"
 
 S = "${WORKDIR}/pgpool-II-${PV}"
 

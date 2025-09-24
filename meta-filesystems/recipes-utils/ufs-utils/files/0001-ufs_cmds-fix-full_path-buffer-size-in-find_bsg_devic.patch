@@ -13,8 +13,8 @@ Aborted (core dumped)
 
 Fix #58
 
-Upstream-Status: Submitted
-[https://github.com/SanDisk-Open-Source/ufs-utils/pull/75]
+Upstream-Status: Backport
+[https://github.com/SanDisk-Open-Source/ufs-utils/commit/989dcd297223d6896c5892532d14984326fa093d]
 
 Signed-off-by: Yi Zhao <yi.zhao@windriver.com>
 ---
