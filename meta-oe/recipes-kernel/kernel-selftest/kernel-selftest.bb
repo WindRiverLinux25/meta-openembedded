@@ -89,7 +89,16 @@ either install it and add it to HOSTTOOLS, or add clang-native from meta-clang t
     install -Dm 0644 ${STAGING_KERNEL_BUILDDIR}/.config ${S}/include/config/auto.conf
     if [ "${SITEINFO_BITS}" != "32" ]; then
         for f in long-double endianness floatn struct_rwlock; do
-            cp ${RECIPE_SYSROOT}${includedir}/bits/$f-64.h ${S}/bits/$f-32.h
+            src_base="${RECIPE_SYSROOT}${includedir}/bits/${f}"
+            if [ -f "${src_base}-64.h" ]; then
+                src="${src_base}-64.h"
+            elif [ -f "${src_base}.h" ]; then
+                src="${src_base}.h"
+            else
+                bbwarn "Missing header for bits/${f}{-64,.h} under ${RECIPE_SYSROOT}${includedir}/bits skipped"
+                continue
+            fi
+            install -m 0644 "${src}" "${S}/bits/${f}-32.h"
         done
     fi
     oe_runmake -C ${S} headers
@@ -97,6 +106,12 @@ either install it and add it to HOSTTOOLS, or add clang-native from meta-clang t
     sed -i -e '/mrecord-mcount/d' ${S}/Makefile
     sed -i -e '/Wno-alloc-size-larger-than/d' ${S}/Makefile
     sed -i -e '/Wno-alloc-size-larger-than/d' ${S}/scripts/Makefile.*
+    
+    # Add kernel headers to CFLAGS to fix PTP selftest compilation
+    # Required for PTP_MASK_CLEAR_ALL and PTP_MASK_EN_SINGLE definitions
+    # introduced in kernel v6.7 (commit c5a445b)
+    export CFLAGS="${CFLAGS} -I${STAGING_KERNEL_BUILDDIR}/usr/include"
+    
     oe_runmake -C ${S}/tools/testing/selftests TARGETS="${TEST_LIST}"
 }
 

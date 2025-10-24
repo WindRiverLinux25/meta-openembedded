@@ -16,6 +16,9 @@ SRC_URI = "http://download.redis.io/releases/${BP}.tar.gz \
            file://0004-src-Do-not-reset-FINAL_LIBS.patch \
            file://0005-Define-_GNU_SOURCE-to-get-PTHREAD_MUTEX_INITIALIZER.patch \
            file://0006-Define-correct-gregs-for-RISCV32.patch \
+           file://0001-Check-length-of-AOF-file-name-in-redis-check-aof-CVE.patch \
+           file://0001-Fix-out-of-bounds-write-in-hyperloglog-commands-CVE-.patch \
+           file://0001-Retry-accept-even-if-accepted-connection-reports-an-.patch \
           "
 
 SRC_URI[sha256sum] = "6be4fdfcdb2e5ac91454438246d00842d2671f792673390e742dfcaf1bf01574"
@@ -74,3 +77,4 @@ SYSTEMD_SERVICE:${PN} = "redis.service"
 
 CVE_STATUS[CVE-2022-3734] = "not-applicable-platform: CVE only applies for Windows."
 CVE_STATUS[CVE-2022-0543] = "not-applicable-platform: Debian-specific CVE"
+CVE_STATUS[CVE-2025-21605] = "fixed-version: The backported fix by upstream is included in the used version"

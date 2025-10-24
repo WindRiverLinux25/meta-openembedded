@@ -61,6 +61,7 @@ SRC_URI += "file://0001-gimp-cross-compile-fix-for-bz2.patch"
 SRC_URI += "file://0002-meson.build-reproducibility-fix.patch"
 SRC_URI += "file://0001-meson.build-dont-check-for-lgi.patch"
 SRC_URI += "file://0001-meson.build-require-iso-codes-native.patch"
+SRC_URI += "file://0001-plug-ins-ZDI-CAN-26752-mitigation.patch"
 SRC_URI[sha256sum] = "546ddc30cb2d0e79123c7fcb4d78211e1ee7a6aace91a6a0ad8cbcbf6ea571a2"
 
 PACKAGECONFIG[aa] = "-Daa=enabled,-Daa=disabled,aalib"
@@ -132,4 +133,4 @@ FILES:${PN} += "${datadir}/metainfo"
 
 RDEPENDS:${PN} = "mypaint-brushes-1.0 glib-networking python3-pygobject"
 
-CVE_STATUS[CVE-2007-3741] = "not-applicable-platform: This only applies for Mandriva Linux"
+CVE_STATUS[CVE-2025-8672] = "not-applicable-config: the vulnerability only affects MacOS"

@@ -1,7 +1,7 @@
 SUMMARY = "network auditing tool"
 DESCRIPTION = "Nmap (Network Mapper) is a free and open source (license) utility for network discovery and security auditing.\nGui support via appending to IMAGE_FEATURES x11-base in local.conf"
 SECTION = "security"
-LICENSE = "GPL-2.0-only"
+LICENSE = "NPSL"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=895af8527fe4bcb72f271fd1841fd2f6"
 
@@ -16,6 +16,9 @@ SRC_URI = "http://nmap.org/dist/${BP}.tar.bz2 \
            file://0001-fix-racing-between-build-ncat-and-build-lua.patch \
            "
 SRC_URI[sha256sum] = "e14ab530e47b5afd88f1c8a2bac7f89cd8fe6b478e22d255c5b9bddb7a1c5778" 
+
+UPSTREAM_CHECK_REGEX = "nmap-(?P<pver>\d+(\.\d+)+)\.tar"
+
 inherit autotools-brokensep pkgconfig python3native
 
 PACKAGECONFIG ?= "pcre ncat nping pcap"
