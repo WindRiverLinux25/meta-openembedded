@@ -35,12 +35,11 @@ SRC_URI = "git://github.com/FreeRADIUS/freeradius-server.git;branch=v3.2.x;lfs=0
     file://0015-bootstrap-check-commands-of-openssl-exist.patch \
     file://0016-version.c-don-t-print-build-flags.patch \
     file://0017-Add-acinclude.m4-to-include-required-macros.patch \
-    file://0018-Fix-Service-start-error.patch \
 "
 
 raddbdir = "${sysconfdir}/${MLPREFIX}raddb"
 
-SRCREV = "694a97dddbdd26423504afe7c530e8e1502b7354"
+SRCREV = "d00440f3290871aef667f80e15f256c64f9b7cd6"
 
 UPSTREAM_CHECK_GITTAGREGEX = "release_(?P<pver>\d+(\_\d+)+)"
 
@@ -50,6 +49,8 @@ CVE_STATUS[CVE-2011-4966] = "fixed-version: The CPE in the NVD database doesn't 
 PARALLEL_MAKE = ""
 
 S = "${WORKDIR}/git"
+
+PV .= "+git"
 
 LDFLAGS:append:powerpc = " -latomic"
 LDFLAGS:append:mipsarch = " -latomic"
@@ -82,6 +83,7 @@ EXTRA_OECONF = " --enable-strict-dependencies \
         --without-rlm_securid \
         --without-rlm_unbound \
         --without-rlm_python \
+        --without-rlm_kafka \
         ac_cv_path_PERL=${bindir}/perl \
         ax_cv_cc_builtin_choose_expr=no \
         ax_cv_cc_builtin_types_compatible_p=no \
