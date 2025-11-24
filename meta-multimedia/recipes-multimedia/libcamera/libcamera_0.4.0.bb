@@ -31,7 +31,17 @@ PACKAGECONFIG[dng] = ",,tiff"
 PACKAGECONFIG[gst] = "-Dgstreamer=enabled,-Dgstreamer=disabled,gstreamer1.0 gstreamer1.0-plugins-base"
 PACKAGECONFIG[pycamera] = "-Dpycamera=enabled,-Dpycamera=disabled,python3 python3-pybind11"
 
+PACKAGECONFIG[raspberrypi] = ",,libpisp"
+
+# Raspberry Pi requires the meta-raspberrypi layer
+# These values are coming from the project's meson.build file,
+# which lists the supported values by arch.
+ARM_PIPELINES = "${@bb.utils.contains('PACKAGECONFIG', 'raspberrypi', 'rpi/pisp,rpi/vc4,', '', d)}"
+ARM_PIPELINES .= "imx8-isi,mali-c55,simple,uvcvideo"
+
 LIBCAMERA_PIPELINES ??= "auto"
+LIBCAMERA_PIPELINES:arm ??= "${ARM_PIPELINES}"
+LIBCAMERA_PIPELINES:aarch64 ??= "${ARM_PIPELINES}"
 
 EXTRA_OEMESON = " \
     -Dpipelines=${LIBCAMERA_PIPELINES} \
