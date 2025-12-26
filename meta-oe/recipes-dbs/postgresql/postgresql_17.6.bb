@@ -10,6 +10,8 @@ SRC_URI += "\
    file://0004-config_info.c-not-expose-build-info.patch \
    file://0005-postgresql-fix-ptest-failure-of-sysviews.patch \
    file://0001-tcl.m4-Recognize-tclsh9.patch \
+   file://CVE-2025-12817.patch \
+   file://CVE-2025-12818.patch \
 "
 
 SRC_URI[sha256sum] = "e0630a3600aea27511715563259ec2111cd5f4353a4b040e0be827f94cd7a8b0"
