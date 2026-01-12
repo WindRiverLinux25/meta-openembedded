@@ -13,7 +13,10 @@ SRCREV = "121ab150b3577b666c79a79f4a511798d7ad2432"
 SRC_URI = "git://github.com/yasm/yasm.git;branch=master;protocol=https \
            file://0001-yasm-Set-build-date-to-SOURCE_DATE_EPOCH.patch \
            file://0002-yasm-Use-BUILD_DATE-for-reproducibility.patch \
-"
+           file://CVE-2023-29579.patch \
+           file://CVE-2021-33464.patch \
+           file://CVE-2021-33456.patch \
+           "
 
 S = "${WORKDIR}/git"
 
