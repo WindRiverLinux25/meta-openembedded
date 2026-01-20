@@ -7,6 +7,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=911690f51af322440237a253d695d19f"
 
 SRC_URI[sha256sum] = "adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2"
 
+SRC_URI += "file://CVE-2026-22701.patch"
+
 BBCLASSEXTEND = "native nativesdk"
 
 inherit pypi python_hatchling
