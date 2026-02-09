@@ -22,7 +22,10 @@ PACKAGECONFIG_NUMA:armeb = ""
 PACKAGECONFIG ??= "${PACKAGECONFIG_NUMA}"
 PACKAGECONFIG[numa] = ",--disable-numa,numactl"
 
-SRC_URI = "git://git.kernel.dk/fio.git;branch=master"
+SRC_URI = "git://git.kernel.dk/fio.git;branch=master \
+           file://CVE-2025-10823.patch \
+"
+
 SRCREV = "a6e474c9e896e4ba1eb40066a03402afb040710a"
 
 UPSTREAM_CHECK_GITTAGREGEX = "fio-(?P<pver>\d+(\.\d+)+)"
