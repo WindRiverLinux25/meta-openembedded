@@ -1,0 +1,43 @@
+From 9ef4065605b542345e6e45c0264f5a832ff91345 Mon Sep 17 00:00:00 2001
+From: Yi Zhao <yi.zhao@windriver.com>
+Date: Fri, 13 Feb 2026 20:55:12 +0800
+Subject: [PATCH] Fix mgmtd crash on arm32
+
+Commit 597d79a8 ("lib: improve error handling for datastore
+notifications")[1] introduced a retry mechanism in oper_walk_done() via
+timer_walk_abort(). On ARM32 platforms, this exposed a potential
+alignment issue, causing mgmtd to crash.
+
+This issue is still under investigation upstream[2]. As a workaround,
+restore the previous behaviour in oper_walk_done(): on any error, free
+the arguments and return immediately, without attempting a retry. This
+avoids the alignment trap on ARM32.
+
+[1] https://github.com/FRRouting/frr/commit/597d79a89e6628645e3648bdc03db0d7bdc7e0f4
+[2] https://github.com/FRRouting/frr/issues/20087
+
+Upstream-Status: Pending
+
+Signed-off-by: Yi Zhao <yi.zhao@windriver.com>
+---
+ lib/northbound_notif.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lib/northbound_notif.c b/lib/northbound_notif.c
+index 9caca9f6d7..b57ca3382f 100644
+--- a/lib/northbound_notif.c
++++ b/lib/northbound_notif.c
+@@ -517,8 +517,8 @@ static enum nb_error oper_walk_done(const struct lyd_node *tree, void *arg, enum
+ error:
+ 		__log_err("Error notifying for datastore path: %s: %s", path, nb_err_name(ret));
+ 
+-		timer_walk_abort(args);
+-		goto done;
++		XFREE(MTYPE_NB_NOTIF_WALK_ARGS, args);
++		return ret;
+ 	} else {
+ 		__dbg("Done with oper-path collection for path: %s", path);
+ 
+-- 
+2.34.1
+
