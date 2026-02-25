@@ -85,4 +85,6 @@ FILES:${PN} += " \
     ${datadir}/metainfo \
 "
 
-SYSTEMD_SERVICE:${PN} = "vncserver@.service"
+#If user want to enable service of vncserver, vncserver@:<display>.service is needed and further steps are listed in unit file itself.
+SYSTEMD_SERVICE:${PN} ?= "vncserver@.service"
+SYSTEMD_AUTO_ENABLE:${PN} = "disable"
