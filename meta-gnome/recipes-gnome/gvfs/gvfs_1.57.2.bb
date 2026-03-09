@@ -20,6 +20,7 @@ RDEPENDS:${PN} += "gsettings-desktop-schemas"
 SRC_URI = "\
           https://download.gnome.org/sources/${BPN}/${@gnome_verdir("${PV}")}/${BPN}-${PV}.tar.xz;name=archive \
           file://CVE-2026-28295.patch \
+          file://CVE-2026-28296.patch \
           "
 SRC_URI[archive.sha256sum] = "f16bef8eca1fd6c117e85db011d21e915669790d55867349c5f1b291299e9585"
 
