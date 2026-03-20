@@ -4,6 +4,8 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=5f30f0716dfdd0d91eb439ebec522ec2"
 
 GNOMEBN = "libwnck"
 
+S = "${WORKDIR}/sources-unpack/${GNOMEBN}-${PV}"
+
 SECTION = "x11/libs"
 DEPENDS = "cairo glib-2.0 gtk+3"
 
