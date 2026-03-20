@@ -18,4 +18,6 @@ SRC_URI[archive.sha256sum] = "1d7a35af9c5ceccacb244ee3c2deb9b245720d8510ac5c7e6f
 
 EXTRA_OEMESON = "-Dbuild-demos=false"
 
+S = "${WORKDIR}/${GNOMEBN}-${PV}"
+
 FILES:${PN}-dev += "${libdir}/*/include ${libdir}/*/proc/m4"
