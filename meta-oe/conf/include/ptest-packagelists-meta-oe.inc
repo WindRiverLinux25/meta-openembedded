@@ -62,6 +62,7 @@ PTESTS_SLOW_META_OE = "\
     rocksdb \
     mariadb \
     poco \
+    postgresql \
     re2 \
 "
 PTESTS_SLOW_META_OE:append:x86 = " kernel-selftest"
