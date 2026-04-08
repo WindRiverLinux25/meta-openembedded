@@ -1,4 +1,4 @@
-From 868a04b0596e2df708ba14ed70815b1411db3db1 Mon Sep 17 00:00:00 2001
+From 7ae986615fc8e6b65085ef4a573667613008ed75 Mon Sep 17 00:00:00 2001
 From: Changqing Li <changqing.li@windriver.com>
 Date: Thu, 21 Feb 2019 11:33:24 +0800
 Subject: [PATCH] mkversion: remove user host pwd from version
@@ -12,6 +12,8 @@ Signed-off-by: Changqing Li <changqing.li@windriver.com>
  build/mkversion | 8 ++++++--
  1 file changed, 6 insertions(+), 2 deletions(-)
 
+diff --git a/build/mkversion b/build/mkversion
+index 8d3e977..db369e8 100755
 --- a/build/mkversion
 +++ b/build/mkversion
 @@ -53,8 +53,12 @@ APPLICATION=$1

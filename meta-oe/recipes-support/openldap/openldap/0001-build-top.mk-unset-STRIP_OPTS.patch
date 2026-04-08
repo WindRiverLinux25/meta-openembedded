@@ -1,4 +1,4 @@
-From 321839cbd1d57f12d3d6695254d2003473d8dd1a Mon Sep 17 00:00:00 2001
+From ff68e942040ff13d792c7fd571486c2a44d821db Mon Sep 17 00:00:00 2001
 From: Yi Zhao <yi.zhao@windriver.com>
 Date: Wed, 8 Dec 2021 16:58:55 +0800
 Subject: [PATCH] build/top.mk: unset STRIP_OPTS
@@ -21,7 +21,7 @@ Signed-off-by: Yi Zhao <yi.zhao@windriver.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/build/top.mk b/build/top.mk
-index 38ce146..6e9fe1f 100644
+index 2dacf61..4cac407 100644
 --- a/build/top.mk
 +++ b/build/top.mk
 @@ -60,7 +60,7 @@ INSTALL_PROGRAM = $(INSTALL)
@@ -33,6 +33,3 @@ index 38ce146..6e9fe1f 100644
  
  LINT = lint
  5LINT = 5lint
--- 
-2.17.1
-
