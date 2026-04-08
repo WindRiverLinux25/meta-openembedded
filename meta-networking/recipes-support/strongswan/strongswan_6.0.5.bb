@@ -11,7 +11,7 @@ DEPENDS:append = "${@bb.utils.contains('DISTRO_FEATURES', 'tpm2', '  tpm2-tss', 
 SRC_URI = "https://download.strongswan.org/strongswan-${PV}.tar.bz2 \
           "
 
-SRC_URI[sha256sum] = "212368cbc674fed31f3292210303fff06da8b90acad2d1387375ed855e6879c4"
+SRC_URI[sha256sum] = "437460893655d6cfbc2def79d2da548cb5175b865520c507201ab2ec2e7895d9"
 
 UPSTREAM_CHECK_REGEX = "strongswan-(?P<pver>\d+(\.\d+)+)\.tar"
 
