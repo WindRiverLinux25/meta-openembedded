@@ -1,4 +1,4 @@
-From 6414a404c3216e654cc6583ebda0c7b3bd304ecf Mon Sep 17 00:00:00 2001
+From eb87259b4f674838c13eabeb3062239d58a51892 Mon Sep 17 00:00:00 2001
 From: Khem Raj <raj.khem@gmail.com>
 Date: Sat, 21 Dec 2019 12:09:51 -0800
 Subject: [PATCH] Define _GNU_SOURCE to get PTHREAD_MUTEX_INITIALIZER
@@ -16,7 +16,7 @@ Signed-off-by: Leon Anavi <leon.anavi@konsulko.com>
  1 file changed, 1 insertion(+)
 
 diff --git a/src/zmalloc.c b/src/zmalloc.c
-index 3abf9a31a..fa2f25c07 100644
+index 24dd11ab2..9bd48767f 100644
 --- a/src/zmalloc.c
 +++ b/src/zmalloc.c
 @@ -33,6 +33,7 @@

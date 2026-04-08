@@ -17,7 +17,7 @@ SRC_URI = " \
 	file://0001-src-Do-not-reset-FINAL_LIBS.patch \
 	file://GNU_SOURCE-7.patch \
 "
-SRCREV = "43561f89298820073ebfcff6ee7922d5670091a2"
+SRCREV = "19b07dfcbb75b14a1ed1b0a48cb8a0efcc81d563"
 
 S = "${WORKDIR}/git"
 

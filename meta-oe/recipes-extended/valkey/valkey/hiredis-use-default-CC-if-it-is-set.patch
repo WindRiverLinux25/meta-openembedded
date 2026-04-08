@@ -1,4 +1,4 @@
-From a5bcf56630df520040076dd14c3c54fef0785ceb Mon Sep 17 00:00:00 2001
+From b174de1893385670e533e447c71dac1211bc424a Mon Sep 17 00:00:00 2001
 From: Venture Research <tech@ventureresearch.com>
 Date: Fri, 8 Feb 2013 17:39:52 -0600
 Subject: [PATCH] hiredis: use default CC if it is set

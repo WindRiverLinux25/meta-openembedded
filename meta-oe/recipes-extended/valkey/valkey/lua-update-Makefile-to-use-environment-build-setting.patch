@@ -1,4 +1,4 @@
-From 60487572d23cb374f8eb6b6560c385ecf6ad417e Mon Sep 17 00:00:00 2001
+From f6730f49d9be4265b41f8965843f24ef14498dd2 Mon Sep 17 00:00:00 2001
 From: Venture Research <tech@ventureresearch.com>
 Date: Fri, 8 Feb 2013 20:22:19 -0600
 Subject: [PATCH] lua: update Makefile to use environment build settings
@@ -20,7 +20,6 @@ Updated to work with 8.1.x
 Signed-off-by: Randy MacLeod <Randy.MacLeod@windriver.com>
 
 Upstream-Status: Inappropriate [OE-specific]
-
 ---
  deps/Makefile         |  1 -
  deps/lua/Makefile     |  1 -
