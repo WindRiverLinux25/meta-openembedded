@@ -1,4 +1,4 @@
-From 805ce4d40c5aaae12aa73452ff07babe8eb43a62 Mon Sep 17 00:00:00 2001
+From 3538bc59de3f0b04b90c58d7c43d0152823c29c7 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Andreas=20M=C3=BCller?= <schnitzeltony@gmail.com>
 Date: Fri, 28 Sep 2018 00:38:50 +0200
 Subject: [PATCH] Do not ask cmake to export binaries - they don't make it
@@ -26,6 +26,3 @@ index 26156bcb..9eff04aa 100644
      DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT Applications
    )
    if(OPJ_USE_DSYMUTIL)
--- 
-2.25.1
-
