@@ -14,6 +14,7 @@ SRC_URI = "${GITHUB_BASE_URI}/download/${BPN}-${PV}/${BPN}-${PV}.tar.gz \
     file://CVE-2025-9403-0002.patch \
     file://CVE-2026-32316.patch \
     file://CVE-2026-39956.patch \
+    file://CVE-2026-39979.patch \
     file://run-ptest \
     "
 SRC_URI[sha256sum] = "2be64e7129cecb11d5906290eba10af694fb9e3e7f9fc208a311dc33ca837eb0"
