@@ -32,6 +32,7 @@ SRC_URI = "http://ftp.mozilla.org/pub/security/nss/releases/${VERSION_DIR}/src/$
            file://0005-nss-does-not-build-on-mips-with-clang-because-wrong-.patch  \
            file://0006-Fix-nss-multilib-build-on-openSUSE-11.x-32bit.patch \
            file://0007-freebl-add-a-configure-option-to-disable-ARM-HW-cryp.patch \
+           file://CVE-2026-2781.patch \
            "
 SRC_URI[sha256sum] = "9cd610c40422a07771b9b45166be2d052ea2f00b605a7928129e1f2071b3ae27"
 
