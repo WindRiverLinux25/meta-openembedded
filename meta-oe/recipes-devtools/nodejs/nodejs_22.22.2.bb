@@ -1,7 +1,7 @@
 DESCRIPTION = "nodeJS Evented I/O for V8 JavaScript"
 HOMEPAGE = "http://nodejs.org"
 LICENSE = "MIT & ISC & BSD-2-Clause & BSD-3-Clause & Artistic-2.0 & Apache-2.0"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=da350b022352bee62fe22feb6ad681c8"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=b195f4ea4368177a2fd84b879f09cba8"
 
 CVE_PRODUCT = "nodejs node.js"
 
@@ -31,15 +31,11 @@ SRC_URI = "http://nodejs.org/dist/v${PV}/node-v${PV}.tar.xz \
            file://0001-positional-args.patch \
            file://0001-custom-env.patch \
            file://run-ptest \
-           file://CVE-2025-55130.patch \
            "
 SRC_URI:append:class-target = " \
            file://0001-Using-native-binaries.patch \
            "
-SRC_URI:append:toolchain-clang:powerpc64le = " \
-           file://0001-ppc64-Do-not-use-mminimal-toc-with-clang.patch \
-           "
-SRC_URI[sha256sum] = "c609946bf793b55c7954c26582760808d54c16185d79cb2fb88065e52de21914"
+SRC_URI[sha256sum] = "b6bedd3a8cacd5df7df015a5088264b12c74a277ba60684cb9642ae8eb743132"
 
 S = "${WORKDIR}/node-v${PV}"
 
