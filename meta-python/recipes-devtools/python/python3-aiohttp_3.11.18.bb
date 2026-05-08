@@ -8,6 +8,13 @@ SRC_URI[sha256sum] = "ae856e1138612b7e412db63b7708735cff4d38d0399f6a5435d3dac266
 
 SRC_URI += "file://CVE-2025-53643.patch \
             file://CVE-2026-34520.patch \
+            file://CVE-2025-69224.patch \
+            file://CVE-2025-69225.patch \
+            file://CVE-2025-69226.patch \
+            file://CVE-2025-69227.patch \
+            file://CVE-2025-69228.patch \
+            file://CVE-2025-69229-1.patch \
+            file://CVE-2025-69229-2.patch \
 "
 
 inherit python_setuptools_build_meta pypi
