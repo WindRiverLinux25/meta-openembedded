@@ -7,6 +7,7 @@ SRC_URI:append = " file://CVE-2026-32647.patch \
                    file://CVE-2026-27651.patch \
                    file://CVE-2026-40701.patch \
                    file://CVE-2026-40460.patch \
+                   file://CVE-2026-42934.patch \
 "
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=a6547d7e5628787ee2a9c5a3480eb628"
