@@ -16,6 +16,7 @@ SRC_URI = "http://php.net/distributions/php-${PV}.tar.bz2 \
            file://0001-configure.ac-don-t-include-build-libtool.m4.patch \
            file://0002-ext-phar-Makefile.frag-Fix-phar-packaging.patch \
            file://CVE-2026-6104.patch \
+           file://CVE-2026-6722.patch \
           "
 
 SRC_URI:append:class-target = " \
