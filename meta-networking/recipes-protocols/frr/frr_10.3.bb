@@ -17,6 +17,7 @@ SRC_URI = "git://github.com/FRRouting/frr.git;protocol=https;branch=stable/10.3 
            file://CVE-2025-61099-61107-3.patch \
            file://0001-Fix-mgmtd-crash-on-arm32.patch \
            file://CVE-2026-37458.patch \
+           file://CVE-2026-37460.patch \
            "
 
 SRCREV = "85cf1ed576deed121751e16a64970f8a652a9e1e"
