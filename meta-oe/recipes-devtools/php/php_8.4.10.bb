@@ -19,6 +19,7 @@ SRC_URI = "http://php.net/distributions/php-${PV}.tar.bz2 \
            file://CVE-2026-6722.patch \
            file://CVE-2026-7568.patch \
            file://CVE-2026-7259.patch \
+           file://CVE-2026-6735.patch \
           "
 
 SRC_URI:append:class-target = " \
