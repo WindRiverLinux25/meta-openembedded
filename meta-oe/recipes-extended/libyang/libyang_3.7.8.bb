@@ -10,6 +10,8 @@ SRCREV = "03e294d83b610f89e8ba7b2156a80dc0ad534443"
 
 SRC_URI = "git://github.com/CESNET/libyang.git;branch=master;protocol=https \
            file://0001-test_context-skip-test-case-test_searchdirs.patch \
+           file://CVE-2026-44673.patch \
+           file://CVE-2026-41401.patch \
            file://run-ptest \
            "
 
