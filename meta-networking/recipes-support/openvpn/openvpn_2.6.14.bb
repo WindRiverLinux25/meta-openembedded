@@ -9,6 +9,7 @@ inherit autotools systemd update-rc.d pkgconfig ptest
 
 SRC_URI = "http://swupdate.openvpn.org/community/releases/${BP}.tar.gz \
            file://0001-configure.ac-eliminate-build-path-from-openvpn-versi.patch \
+           file://CVE-2026-13698.patch \
            file://openvpn \
            file://run-ptest \
            file://CVE-2025-13086.patch \
