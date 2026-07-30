@@ -34,6 +34,8 @@ SRC_URI = "https://nodejs.org/dist/v${PV}/node-v${PV}.tar.xz \
            file://0001-fix-arm-Neon-intrinsics-types.patch \
            file://0001-detect-aarch64-Neon-correctly.patch \
            file://0001-llhttp-fix-NEON-header-value-__builtin_ctzll-undefin.patch \
+           file://0001-tls-bind-reusable-sessions-to-authenticated-host.patch \
+           file://0002-test-add-session-reuse-host-verification-regressions.patch \
            file://run-ptest \
            "
 SRC_URI:append:class-target = " \
