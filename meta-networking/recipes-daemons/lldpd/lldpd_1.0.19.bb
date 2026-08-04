@@ -10,6 +10,7 @@ SRC_URI = "\
     file://lldpd.init.d \
     file://lldpd.default \
     file://run-ptest \
+    file://CVE-2026-46433.patch \
     "
 
 SRC_URI[sha256sum] = "f87df3163d5e5138da901d055b384009785d1eb50fdb17a2343910fcf30a997f"
