@@ -9,7 +9,9 @@ SECTION = "libs"
 LICENSE = "Artistic-1.0 | GPL-1.0-or-later"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=65f65488c774efe1da488e36ad6c4a36"
 
-SRC_URI = "https://cpan.metacpan.org/authors/id/H/HM/HMBRAND/DBI-${PV}.tar.gz"
+SRC_URI = "https://cpan.metacpan.org/authors/id/H/HM/HMBRAND/DBI-${PV}.tar.gz \
+           file://CVE-2026-10879.patch \
+           "
 SRC_URI[sha256sum] = "53ab32ac8c30295a776dde658df22be760936cdca5a3c003a23bda6d829fa184"
 
 S = "${WORKDIR}/DBI-${PV}"
