@@ -13,6 +13,7 @@ SRC_URI = "https://download.strongswan.org/strongswan-${PV}.tar.bz2 \
            file://CVE-2026-78124.patch \
            file://CVE-2026-78126.patch \
            file://CVE-2026-78127.patch \
+           file://CVE-2026-78129.patch \
           "
 
 SRC_URI[sha256sum] = "437460893655d6cfbc2def79d2da548cb5175b865520c507201ab2ec2e7895d9"
