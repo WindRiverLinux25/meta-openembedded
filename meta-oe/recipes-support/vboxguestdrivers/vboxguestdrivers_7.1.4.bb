@@ -13,6 +13,7 @@ VBOX_NAME = "VirtualBox-${PV}"
 
 SRC_URI = "http://download.virtualbox.org/virtualbox/${PV}/${VBOX_NAME}.tar.bz2 \
     file://Makefile.utils \
+    file://0001-vboxvideo-let-the-build-decide-if-drm_fb_helper_alloc.patch;patchdir=${UNPACKDIR}/${VBOX_NAME} \
 "
 
 SRC_URI[sha256sum] = "872e7a42b41f8558abbf887f1bdc7aac932bb88b2764d07cbce270cab57e3b5e"
@@ -62,7 +63,17 @@ do_configure:prepend() {
 
 # compile and install mount utility
 do_compile() {
-    oe_runmake all
+    # LIN1025-21396: drm_fb_helper_alloc_info() was dropped mid-series in the
+    # 6.6/6.12/6.18 stable kernels (LTS25 ships 6.12.103). A version check
+    # alone cannot express that, so probe the kernel headers we build against
+    # and tell vbox_fb.c via VBOX_NO_DRM_FB_HELPER_ALLOC_INFO.
+    vbox_kcflags=""
+    if [ -e "${STAGING_KERNEL_DIR}/include/drm/drm_fb_helper.h" ] &&
+       ! grep -q drm_fb_helper_alloc_info "${STAGING_KERNEL_DIR}/include/drm/drm_fb_helper.h"; then
+        vbox_kcflags="-DVBOX_NO_DRM_FB_HELPER_ALLOC_INFO"
+    fi
+
+    oe_runmake all KCFLAGS="$vbox_kcflags"
     oe_runmake 'LD=${CC}' 'EXTRA_CFLAGS=-I${STAGING_KERNEL_BUILDDIR}/include/' 'LDFLAGS=${LDFLAGS}' -C ${S}/utils
     if ! [ -e vboxguest.ko -a -e vboxsf.ko -a -e vboxvideo.ko ] ; then
         echo "ERROR: One of vbox*.ko modules wasn't built"
