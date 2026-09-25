@@ -15,6 +15,7 @@ SRC_URI = "http://swupdate.openvpn.org/community/releases/${BP}.tar.gz \
            file://CVE-2025-13086.patch \
            file://CVE-2026-40215.patch \
            file://CVE-2026-13117.patch \
+           file://0002-tests-unit_tests-add-test_common.h.patch \
           "
 
 UPSTREAM_CHECK_URI = "https://openvpn.net/community-downloads"
